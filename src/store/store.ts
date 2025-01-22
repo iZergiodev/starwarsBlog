@@ -33,7 +33,7 @@ interface Store {
   planets: string[];
   vehicles: string[];
   favorites: string[];
-  details: any;
+  details: object;
   getCharacter: () => void;
   getPlanets: () => void;
   getVehicles: () => void;
@@ -53,7 +53,7 @@ export const useStore = create<Store>((set, get) => ({
   planets: [],
   vehicles: [],
   favorites: [],
-  details: null,
+  details: {},
 
   getCharacter: async () => {
     const data = await fetchData(FetchType.people);
